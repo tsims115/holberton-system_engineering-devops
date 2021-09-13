@@ -1,2 +1,2 @@
 #!/bin/bash
-type /tmo/iamafile
+type /tmp/iamafile
