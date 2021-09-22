@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# until loop to print Holberton School 10 times with a newline
+
+i=0
+until [ $i -eq 10 ]
+do
+    echo "Holberton School"
+    i=$(( i + 1 ))
+done
