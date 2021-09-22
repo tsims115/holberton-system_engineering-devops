@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# for loop to show contents of current directory
+
+for fileName in *
+do
+    echo "$fileName" | cut --delimiter="-" -f 2
+done
