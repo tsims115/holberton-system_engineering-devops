@@ -14,8 +14,7 @@ then
     if [ -f "$file" ]
     then
 	echo "holbertonschool is a regular file"
-    else
-	echo "holbertonschool is not a regular file"
+    
     fi
 else
     echo "holbertonschool file does not exist"
