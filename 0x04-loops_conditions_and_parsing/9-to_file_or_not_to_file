@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+# Conditional statement to check whether or not a file exists and if it is empty if it does exist
+
+file="holbertonschool"
+if [ -e "$file" ]
+then
+    echo "holbertonschool file exists"
+    if [ -s "$file" ]
+    then
+	echo "holbertonschool file is not empty"
+    else
+	echo "holberton file is empty"
+    fi
+    if [ -f "$file" ]
+    then
+	echo "holbertonschool is a regular file"
+    else
+	echo "holbertonschool is not a regular file"
+    fi
+else
+    echo "holbertonschool file does not exist"
+fi
