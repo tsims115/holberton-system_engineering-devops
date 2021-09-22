@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# while loop to print Holberton School 10 times but on 9th iteration print hi instead
+# while loop to print Holberton School 10 times but on 9th iteration print hi also on a newline
 
 i=0
 while ((i < 10))
