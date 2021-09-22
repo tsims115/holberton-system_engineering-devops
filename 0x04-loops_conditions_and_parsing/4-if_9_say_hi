@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# while loop to print Holberton School 10 times but on 9th iteration print hi instead
+
+i=0
+while ((i < 10))
+do
+    if ((i == 8))
+    then
+	echo "Holberton School"
+	echo "Hi"
+    else
+	echo "Holberton School"
+    fi
+    i=$(( i + 1 ))
+done
