@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-# Bash script to display current PID number of itself
-
-echo $$
