@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# script to show all PID runnning with the word bash in it
+# shellcheck disable=SC2009
+ps u -A | grep "bash"
