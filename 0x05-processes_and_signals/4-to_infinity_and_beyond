@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# script to indefinitely print To infinity and beyond to the screen
+
+while true
+do
+    echo "To infinity and beyond"
+done
