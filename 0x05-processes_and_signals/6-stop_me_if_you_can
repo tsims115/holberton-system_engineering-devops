@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 # script to kill a process without kill or killall commands
 
-pkill -SIGTERM -f 4-to_infinity_and_beyond
+pkill -SIGSTOP -f 4-to_infinity_and_beyond
 
