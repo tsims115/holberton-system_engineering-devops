@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# kill a program that seems it wont be killed
+
+pkill -SIGKILL -f 7-highlander
