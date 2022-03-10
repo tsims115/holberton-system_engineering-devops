@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 # installs nginx  and changes html page to hello world
 
-sudo apt-get install nginx
+sudo apt-get -y update
+sudo apt-get -y upgrade
+sudo apt-get -y install nginx
 sudo echo "Hello World" | sudo tee /var/www/html/index.html
