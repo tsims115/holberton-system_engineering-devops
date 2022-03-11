@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# configures nginx config file to redirect
+
+oldtext="^\tlocation / {"
+newtext="\tlocation /redirect_me {\n\t\treturn 301 \$scheme://https://www.facebook.com;"
+
+sudo apt-get -y update
+sudo apt-get -y upgrade
+sudo apt-get -y install nginx
+sudo service nginx start
+sudo sed -i "s@$oldtext@$newtext@" /etc/nginx/sites-available/default
+sudo service nginx restart
