@@ -13,7 +13,7 @@ sudo sed -i "s@$oldtext@$newtext@" /etc/nginx/sites-available/default
 sudo service nginx restart
 sudo echo "Ceci n'est pas une page" | sudo tee /usr/share/nginx/html/custom_404.html
 oldtext="^\t}"
-newtext="^\t}\n\terror_page 404 /error404.html;"
+newtext="^\t}\n\n\terror_page 404 /error404.html;"
 sudo sed -i "s@$oldtext@$newtext@" /etc/nginx/sites-available/default
 sudo service nginx restart
 sudo service nginx reload
