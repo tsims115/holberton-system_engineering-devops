@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# Configers HAproxy on load balancer server
+
+sudo apt-get -y update
+sudo apt-get -y upgrade
+sudo apt-get -y install haproxy
+sudo service haproxy start
+text="frontend http_web\n\tbind *:80
+\n\tmode http\n\tdefault_backend custom_backend
+\nbackend custom_backend\n\tbalance roundrobin\n\toption forwardfor
+\n\tserver 3594-web-01 52.91.171.33:80 check
+\n\tserver 3594-web-02 3.88.91.17:80 check"
+
+echo ENABLED=1 | sudo tee -a /etc/default/haproxy
+echo -e $text | sudo tee -a /etc/haproxy/haproxy.cfg
+sudo service haproxy start
