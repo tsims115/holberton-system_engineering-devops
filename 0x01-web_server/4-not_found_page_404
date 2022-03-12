@@ -2,7 +2,7 @@
 # configures nginx config file to redirect
 
 oldtext="^\tlocation / {"
-newtext="\tlocation /redirect_me {\n\t\treturn 301 \$scheme://https://www.facebook.com;"
+newtext="\tlocation /redirect_me {\n\t\treturn 301 \$scheme://facebook.com;"
 
 sudo apt-get -y update
 sudo apt-get -y upgrade
