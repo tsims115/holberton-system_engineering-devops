@@ -10,6 +10,7 @@ sudo apt-get -y install nginx
 sudo service nginx start
 sudo echo "Hello World!" | sudo tee /var/www/html/index.html
 sudo sed -i "s@$oldtext@$newtext@" /etc/nginx/sites-available/default
+sudo service nginx restart
 sudo echo "Ceci n'est pas une page" | sudo tee /var/www/html/error404.html
 oldtext="^\t}"
 newtext="\t}\n\n\terror_page 404 /error404.html;"
