@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+# configures nginx config file to redirect
+
+oldtext="^\tlocation / {"
+newtext="\tlocation /redirect_me {\n\t\treturn 301 \$scheme://facebook.com;"
+
+sudo apt-get -y update
+sudo apt-get -y upgrade
+sudo apt-get -y install nginx
+sudo service nginx start
+sudo echo "Hello World!" | sudo tee /var/www/html/index.html
+sudo sed -i "s@$oldtext@$newtext@" /etc/nginx/sites-available/default
+sudo service nginx restart
+sudo echo "Ceci n'est pas une page" | sudo tee /var/www/html/error404.html
+oldtext="^\t}"
+newtext="\t}\n\n\terror_page 404 /error404.html;"
+sudo sed -i "s@$oldtext@$newtext@" /etc/nginx/sites-available/default
+oldtext="^\terror_page 404 /error404.html;"
+newtext="\terror_page 404 /error404.html;\n\n\tadd_header X-Served-By $HOSTNAME;"
+sudo sed -i "s@$oldtext@$newtext@" /etc/nginx/sites-available/default
+sudo service nginx restart
+sudo service nginx reload
