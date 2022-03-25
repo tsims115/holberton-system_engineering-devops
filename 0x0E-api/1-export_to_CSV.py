@@ -32,7 +32,7 @@ if __name__ == '__main__':
     for title in tasks_done:
         print("\t {}".format(title))
     filename = '{}.csv'.format(uid)
-    with open(filename, 'w', encoding='UTF8', newline='') as f:
-        writer = csv.writer(f)
+    with open(filename, 'w+', encoding='UTF8', newline='') as f:
+        writer = csv.writer(f, quoting=csv.QUOTE_ALL)
         for r in rows:
             writer.writerow(r)
