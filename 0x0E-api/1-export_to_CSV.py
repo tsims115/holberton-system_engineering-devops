@@ -19,7 +19,7 @@ if __name__ == '__main__':
     username = user['username']
     rows = []
     for task in todos:
-        row = [uid, username, task['title'], str(task['completed'])]
+        row = [uid, username, str(task['completed']), task['title']]
         rows.append(row)
     filename = '{}.csv'.format(uid)
     with open(filename, 'w+', encoding='UTF8', newline='') as f:
