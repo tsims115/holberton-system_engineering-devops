@@ -23,12 +23,12 @@ if __name__ == '__main__':
         if task['completed']:
             num_done += 1
             tasks_done.append(task['title'])
-        row = {
+        json_row = {
             "task": task['title'],
-            "completed": str(task['completed']).lower(),
+            "completed": task['completed'],
             "username": username
             }
-        tasks.append(row)
+        tasks.append(json_row)
     data[uid] = tasks
     print("Employee {} is done with tasks".format(name), end="")
     print("({}/{}):".format(num_done, tot_tasks))
