@@ -25,14 +25,14 @@ if __name__ == '__main__':
             num_done += 1
             tasks_done.append(task['title'])
         tot_tasks += 1
-        row = [int(uid), username, task['completed'], task['title']]
+        row = [uid, username, str(task['completed']), task['title']]
         rows.append(row)
     print("Employee {} is done with tasks".format(name), end="")
     print("({}/{}):".format(num_done, tot_tasks))
     for title in tasks_done:
         print("\t {}".format(title))
     filename = '{}.csv'.format(uid)
-    with open(filename, 'w+', encoding='UTF8', newline='') as f:
+    with open(filename, 'w', encoding='UTF8', newline='') as f:
         writer = csv.writer(f)
         for r in rows:
             writer.writerow(r)
