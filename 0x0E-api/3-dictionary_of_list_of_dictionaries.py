@@ -4,9 +4,7 @@
 
 import json
 import requests
-import sys
 from urllib import request
-
 
 
 if __name__ == '__main__':
