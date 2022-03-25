@@ -3,9 +3,10 @@
 
 
 import json
+import requests
 import sys
 from urllib import request
-import requests
+
 
 
 if __name__ == '__main__':
@@ -20,7 +21,7 @@ if __name__ == '__main__':
         json_list = []
         for task in todos:
             json_task = {
-                "username": user['name'],
+                "username": user['username'],
                 "task": task['title'],
                 "completed": task['completed']
             }
@@ -29,5 +30,3 @@ if __name__ == '__main__':
     filename = "todo_all_employees.json"
     with open(filename, 'w+', encoding='UTF8') as f:
         json.dump(data, f)
-    """with request.urlopen("{}/?userId={}".format(turl, uid)) as response:
-        todos = json.loads(response.read().decode('utf8'))"""
