@@ -25,7 +25,7 @@ if __name__ == '__main__':
             tasks_done.append(task['title'])
         row = {
             "task": task['title'],
-            "completed": str(task['completed']),
+            "completed": str(task['completed']).lower(),
             "username": username
             }
         tasks.append(row)
