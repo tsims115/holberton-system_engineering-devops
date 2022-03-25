@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""GETS information from url and with given employee id"""
+"""Module 0-gather_data_from_an_API GETS information from url and with id"""
 
 
 from urllib import request
