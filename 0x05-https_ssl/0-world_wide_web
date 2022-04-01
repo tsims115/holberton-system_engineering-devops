@@ -9,7 +9,6 @@ digDomain () {
     return 0;
 }
 
-domain=$1;
 if [ $# -gt 1 ]
 then
     digDomain $1 $2;
