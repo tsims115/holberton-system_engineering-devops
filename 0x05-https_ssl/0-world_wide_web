@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+# makes www point to lb-01 and adds subdomains
+
+DEFAULT=default
+
+digDomain () {
+    subdomain=$2
+    dig "$2.$1" | grep -A1 'ANSWER SECTION:' | tail -1 | awk -v subdomain=$subdomain '{print "The subdomain " subdomain " is a " $4 " record and points to " $5}';
+    return 0;
+}
+
+domain=$1;
+if [ $# -gt 1 ]
+then
+    digDomain $1 $2;
+    # dig "$2$1" | grep -A1 'ANSWER SECTION:' | tail -1 | awk '{echo }'
+else
+    digDomain $1 'www';
+    digDomain $1 'lb-01';
+    digDomain $1 'web-01';
+    digDomain $1 'web-02';
+fi
